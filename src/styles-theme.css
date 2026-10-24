@@ -311,8 +311,7 @@ body::after {
 .about-fact .stat-meter { display: none; }
 .about-facts .stat-number-wrap strong { color: var(--accent); }
 .about-note { border-left-color: var(--accent); background: transparent; color: var(--ink); font-style: italic; }
-.hero-project-video-player { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid rgba(215,237,103,.32); background: #0b120d; object-fit: cover; }
-.hero-project-video-caption { color: var(--signal); }
+.hero-project-image { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid rgba(215,237,103,.32); background: #0b120d; object-fit: contain; }
 
 .skill-groups { align-items: start; gap: clamp(30px, 5vw, 70px); }
 .skill-card, .skill-card:nth-child(2) { min-width: 0; padding: 0; border: 0; border-top: 2px solid var(--ink); background: transparent; box-shadow: none; transform: none; }
@@ -343,7 +342,7 @@ body, button, a { font-family: 'Trebuchet MS', 'Comic Sans MS', ui-rounded, sans
 }
 .hero h1 { letter-spacing: -.055em; }
 .hero-art { border-radius: 25px; }
-.hero-project-video-player { overflow: hidden; border-radius: 16px; }
+.hero-project-image { overflow: hidden; border-radius: 16px; }
 .button, .primary-navigation .nav-contact-cta, .flow-button, .contact-pending { border-radius: 999px; }
 .stat-tile { border-radius: 18px; }
 .about-note { border-radius: 0 14px 14px 0; }

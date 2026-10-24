@@ -6,31 +6,25 @@ const stages = [
     label: 'TELA INICIAL',
     title: 'Menu do jogo',
     detail: 'A tela que recebe o jogador.',
-    file: 'InitialMenu.mp4',
+    file: 'InitialMenu.PNG',
   },
   {
     label: 'ITENS / LUA',
     title: 'Inventário',
     detail: 'Interface para organizar os itens.',
-    file: 'InventorySystem.mp4',
+    file: 'InventorySystem.PNG',
   },
   {
     label: 'COMBATE / LUA',
     title: 'Sistema de armas',
     detail: 'Mecânicas de combate dentro do jogo.',
-    file: 'GunSystem.mp4',
+    file: 'GunSystem.PNG',
   },
   {
     label: 'VEÍCULOS / LUA',
     title: 'Garagem e oficina',
     detail: 'Veículos, concessionária e oficina.',
-    file: 'Garagem+Concsessionaria+OficinaSystem.mp4',
-  },
-  {
-    label: 'INTERFACE WEB',
-    title: 'Painel do jogo',
-    detail: 'Um painel web que fiz.',
-    file: 'GamePainelSite.mp4',
+    file: 'OficinaSystem.PNG',
   },
 ];
 
@@ -45,59 +39,7 @@ function cardOpacity(progress) {
 }
 
 function ProjectFrame({ file, title }) {
-  const videoRef = useRef(null);
-  const [frame, setFrame] = useState('');
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return undefined;
-    let mounted = true;
-
-    const capture = () => {
-      if (!mounted || !video.videoWidth || !video.videoHeight) return;
-      const scale = Math.min(1, 720 / video.videoWidth);
-      const canvas = document.createElement('canvas');
-      canvas.width = Math.round(video.videoWidth * scale);
-      canvas.height = Math.round(video.videoHeight * scale);
-      const context = canvas.getContext('2d');
-      if (!context) return;
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
-      try { setFrame(canvas.toDataURL('image/jpeg', 0.76)); } catch { /* O vídeo continua disponível como referência local. */ }
-    };
-
-    const onMetadata = () => {
-      if (video.duration > 0.5) video.currentTime = Math.min(1.2, video.duration * 0.12);
-      else capture();
-    };
-    const onLoadedData = () => { if (video.currentTime < 0.05) capture(); };
-
-    video.addEventListener('loadedmetadata', onMetadata);
-    video.addEventListener('loadeddata', onLoadedData);
-    video.addEventListener('seeked', capture);
-    if (video.readyState >= 1) onMetadata();
-    return () => {
-      mounted = false;
-      video.removeEventListener('loadedmetadata', onMetadata);
-      video.removeEventListener('loadeddata', onLoadedData);
-      video.removeEventListener('seeked', capture);
-    };
-  }, [file]);
-
-  return (
-    <>
-      <video
-        ref={videoRef}
-        className="tunnel-frame-source"
-        src={`${import.meta.env.BASE_URL}images/${file}`}
-        muted
-        playsInline
-        preload="metadata"
-        tabIndex={-1}
-        aria-hidden="true"
-      />
-      {frame ? <img className="tunnel-project-still" src={frame} alt="" /> : <span className="tunnel-frame-pending">{title}</span>}
-    </>
-  );
+  return <img className="tunnel-project-still" src={`${import.meta.env.BASE_URL}images/${file}`} alt={title} />;
 }
 
 export default function ProcessTunnel() {

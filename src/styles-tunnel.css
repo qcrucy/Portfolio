@@ -139,7 +139,6 @@
 .tunnel-card-visual::before { z-index: 1; opacity: .18; background-image: linear-gradient(rgba(245,241,231,.28) 1px, transparent 1px), linear-gradient(90deg,rgba(245,241,231,.28) 1px,transparent 1px); }
 .tunnel-card-visual::after { inset: 0; z-index: 1; width: auto; height: auto; border: 0; border-radius: 0; background: linear-gradient(180deg,rgba(10,15,11,.08) 30%,rgba(10,15,11,.58)); transform: none; transition: none; }
 .tunnel-card:hover .tunnel-card-visual::after, .tunnel-card.is-selected .tunnel-card-visual::after { transform: none; }
-.tunnel-frame-source { position: absolute; top: 0; left: 0; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
-.tunnel-project-still { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.tunnel-project-still { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; }
 .tunnel-frame-pending { position: relative; z-index: 2; color: var(--signal); font: 8px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .tunnel-visual-coordinates { position: absolute; z-index: 2; right: 7px; bottom: 7px; left: 7px; color: #f5f1e7; font-size: 6px; text-align: left; text-shadow: 0 1px 4px #000; }

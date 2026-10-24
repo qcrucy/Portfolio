@@ -13,18 +13,12 @@ export default function Hero() {
 
       <div>
         <div className="hero-showcase-heading"></div>
-        <video
-          src={`${import.meta.env.BASE_URL}images/GamePainelSite.mp4`}
-          className="hero-project-video-player"
-          controls
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-label="Demonstração em vídeo de um painel web"
+        <img
+          src={`${import.meta.env.BASE_URL}images/InitialMenu.PNG`}
+          className="hero-project-image"
+          alt="Captura de tela do menu inicial do jogo"
         />
-        <div className="hero-showcase-caption"><strong>Painel web</strong><span>By. Junior</span></div>
+        <div className="hero-showcase-caption"><strong>Menu inicial</strong><span>By. Junior</span></div>
 
       </div>
     </section>
