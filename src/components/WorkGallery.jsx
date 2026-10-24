@@ -8,19 +8,19 @@ const projects = [
     file: 'InitialMenu.PNG',
     title: 'Menu inicial',
     kind: 'LUA',
-    note: 'A primeira tela que aparece no jogo.',
+    note: 'Tela Inicial responsiva e organizada.',
   },
   {
     file: 'InventorySystem.PNG',
     title: 'Inventário',
     kind: 'LUA',
-    note: 'Um jeito de guardar e organizar os itens.',
+    note: 'Sistema organizado com funções para dropar item e drag.',
   },
   {
     file: 'GunSystem.PNG',
     title: 'Sistema de armas',
     kind: 'LUA',
-    note: 'Mecânicas de combate dentro do jogo.',
+    note: 'Mecânica de combate otimizada e escalavel.',
   },
   {
     file: 'OficinaSystem.PNG',
